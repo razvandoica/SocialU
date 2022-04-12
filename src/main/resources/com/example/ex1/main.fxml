@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="644.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ex1.MainController">
+   <children>
+      <AnchorPane layoutY="35.0" prefHeight="600.0" prefWidth="214.0" style="-fx-background-color: #1e3d59;">
+         <children>
+            <Button alignment="TOP_LEFT" layoutX="-3.0" layoutY="554.0" mnemonicParsing="false" onAction="#logOut" prefHeight="51.0" prefWidth="230.0" style="-fx-background-color: #090a0c,linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),         linear-gradient(#20262b, #191d22),         radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0)); -fx-background-radius: 5,4,3,5; -fx-background-insets: 0,1,2,0; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );" text="Log out" textFill="WHITE">
+               <effect>
+                  <Blend />
+               </effect>
+               <graphic>
+                  <ImageView fx:id="logOutMain" fitHeight="30.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button alignment="TOP_LEFT" layoutX="-3.0" layoutY="172.0" mnemonicParsing="false" onAction="#openEvents" prefHeight="51.0" prefWidth="230.0" style="-fx-background-color: #ffc13b;" text="Events">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <graphic>
+                  <ImageView fx:id="eventsMain" fitHeight="30.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+            </Button>
+            <Label fx:id="accName" alignment="CENTER" layoutX="2.0" layoutY="14.0" prefHeight="35.0" prefWidth="207.0" text="Label" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Button fx:id="BtnPrieteni" alignment="TOP_LEFT" layoutX="-3.0" layoutY="69.0" mnemonicParsing="false" onAction="#openFriends" prefHeight="51.0" prefWidth="230.0" style="-fx-background-color: #ffc13b;" text="Friends">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <graphic>
+                  <ImageView fx:id="prieteniMain" fitHeight="30.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+            </Button>
+            <Button fx:id="button_B" alignment="TOP_LEFT" layoutX="-3.0" layoutY="121.0" mnemonicParsing="false" onAction="#openMsg" prefHeight="51.0" prefWidth="230.0" style="-fx-background-color: #ffc13b;" text="Chat">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <graphic>
+                  <ImageView fx:id="chatMain" fitHeight="30.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+            </Button>
+            <Separator layoutX="1.0" layoutY="68.0" prefWidth="230.0" />
+            <Separator layoutX="1.0" layoutY="121.0" prefWidth="230.0" />
+            <Separator layoutX="224.0" orientation="VERTICAL" prefHeight="600.0" prefWidth="1.0" />
+            <Separator layoutX="1.0" layoutY="171.0" prefWidth="230.0" />
+            <Separator layoutY="225.0" prefWidth="230.0" />
+            <Button fx:id="Activity" layoutX="35.0" layoutY="467.0" mnemonicParsing="false" onAction="#activity" style="-fx-background-color: #090a0c,linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),         linear-gradient(#20262b, #191d22),         radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0)); -fx-background-radius: 5,4,3,5; -fx-background-insets: 0,1,2,0; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );" text="Activity" textFill="WHITE" />
+            <DatePicker fx:id="startDateBar" layoutX="25.0" layoutY="330.0" />
+            <DatePicker fx:id="endDateBar" layoutX="25.0" layoutY="372.0" />
+            <TextField fx:id="friend" layoutX="25.0" layoutY="425.0" prefHeight="25.0" prefWidth="174.0" />
+            <Button layoutX="116.0" layoutY="467.0" mnemonicParsing="false" onAction="#messages" style="-fx-background-color: #090a0c,linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),         linear-gradient(#20262b, #191d22),         radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0)); -fx-background-radius: 5,4,3,5; -fx-background-insets: 0,1,2,0; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );" text="Messages" textFill="WHITE" />
+            <Label layoutX="25.0" layoutY="313.0" text="Start" textFill="WHITE" />
+            <Label layoutX="25.0" layoutY="355.0" text="End" textFill="WHITE" />
+            <Label fx:id="raportLabel" alignment="CENTER" layoutX="28.0" layoutY="247.0" prefHeight="26.0" prefWidth="153.0" text="Reports" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <graphic>
+                  <ImageView fx:id="raportImg" fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+            </Label>
+            <Label layoutX="25.0" layoutY="408.0" text="Friend for report" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="214.0" prefHeight="600.0" prefWidth="686.0">
+         <children>
+            <Pane fx:id="friendPane" layoutX="6.0" layoutY="34.0" prefHeight="600.0" prefWidth="686.0" style="-fx-background-color: #e8e2db;" visible="false">
+               <children>
+                  <Pane fx:id="reqPane" layoutY="43.0" prefHeight="550.0" prefWidth="686.0">
+                     <children>
+                        <TableView fx:id="sentRequestsTable" layoutX="497.0" layoutY="319.0" prefHeight="198.0" prefWidth="175.0">
+                           <columns>
+                              <TableColumn fx:id="sentReqNumeColumn" prefWidth="72.0" text="Nume" />
+                              <TableColumn fx:id="sentReqPrenumeColumn" prefWidth="101.0" text="Prenume" />
+                              <TableColumn fx:id="sentReqEmailColumn" prefWidth="88.0" text="Email" visible="false" />
+                           </columns>
+                        </TableView>
+                        <TableView fx:id="reqTable" layoutX="45.0" layoutY="172.0" prefHeight="345.0" prefWidth="331.0">
+                          <columns>
+                            <TableColumn fx:id="reqNumeColumn" prefWidth="72.0" text="Nume" />
+                              <TableColumn fx:id="reqPrenumeColumn" prefWidth="78.0" text="Prenume" />
+                            <TableColumn fx:id="reqStatusColumn" minWidth="0.0" prefWidth="73.0" text="Status" />
+                              <TableColumn fx:id="reqDataColumn" prefWidth="106.0" text="Data" />
+                              <TableColumn fx:id="reqEmailColumn" prefWidth="52.0" text="Email" visible="false" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="cancelRequestBtn" layoutX="464.0" layoutY="492.0" mnemonicParsing="false" onAction="#deleteSentRequest" prefHeight="25.0" prefWidth="33.0" style="-fx-background-color: #090a0c,linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),         linear-gradient(#20262b, #191d22),         radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0)); -fx-background-radius: 5,4,3,5; -fx-background-insets: 0,1,2,0; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );" text="✖" textFill="RED" />
+                        <Button layoutX="14.0" layoutY="467.0" mnemonicParsing="false" onAction="#declineRequest" prefHeight="25.0" prefWidth="33.0" style="-fx-background-color: #090a0c,linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),         linear-gradient(#20262b, #191d22),         radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0)); -fx-background-radius: 5,4,3,5; -fx-background-insets: 0,1,2,0; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );" text="✖" textFill="RED" />
+                        <Button layoutX="14.0" layoutY="492.0" mnemonicParsing="false" onAction="#acceptRequest" prefHeight="25.0" prefWidth="33.0" style="-fx-background-color: #090a0c,linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),         linear-gradient(#20262b, #191d22),         radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0)); -fx-background-radius: 5,4,3,5; -fx-background-insets: 0,1,2,0; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );" text="✔" textFill="#30c922" />
+                        <Label fx:id="waitingLabel" contentDisplay="RIGHT" layoutX="45.0" layoutY="105.0" opacity="0.26" prefHeight="67.0" prefWidth="331.0" text="Waiting for you ">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="clockImg" fitHeight="50.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
+                           </graphic>
+                        </Label>
+                        <Label fx:id="deliveredLabel" contentDisplay="RIGHT" layoutX="497.0" layoutY="261.0" opacity="0.26" prefHeight="50.0" prefWidth="174.0" text="Delivered">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="deliveredImg" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+                           </graphic>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="frPane" layoutY="43.0" prefHeight="550.0" prefWidth="686.0" visible="false">
+                     <children>
+                        <TableView fx:id="friendTable" layoutX="509.0" layoutY="90.0" prefHeight="463.0" prefWidth="175.0">
+                          <columns>
+                            <TableColumn fx:id="friendNumeColumn" prefWidth="86.0" text="Nume" />
+                            <TableColumn fx:id="friendPrenumeColumn" prefWidth="87.0" text="Prenume" />
+                              <TableColumn fx:id="friendEmailColumn" prefWidth="88.0" text="Email" visible="false" />
+                          </columns>
+                        </TableView>
+                        <Button layoutX="476.0" layoutY="524.0" mnemonicParsing="false" onAction="#deleteFriend" prefHeight="25.0" prefWidth="33.0" style="-fx-background-color: #090a0c,linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),         linear-gradient(#20262b, #191d22),         radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0)); -fx-background-radius: 5,4,3,5; -fx-background-insets: 0,1,2,0; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );" text="✖" textFill="RED" />
+                        <TextField fx:id="searchFriendsBar" layoutX="510.0" layoutY="65.0" onInputMethodTextChanged="#searchFriends" prefHeight="25.0" prefWidth="175.0" promptText="Search for friends..." />
+                        <Button layoutX="230.0" layoutY="213.0" mnemonicParsing="false" onAction="#sendFriendRequest" prefHeight="25.0" prefWidth="44.0" style="-fx-background-color: #090a0c,linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),         linear-gradient(#20262b, #191d22),         radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0)); -fx-background-radius: 5,4,3,5; -fx-background-insets: 0,1,2,0; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );" text="Send" textFill="WHITE" />
+                        <TextField fx:id="searchPeopleBar" layoutX="44.0" layoutY="213.0" onInputMethodTextChanged="#searchFriends" prefHeight="25.0" prefWidth="182.0" promptText="Search for people..." />
+                        <TableView fx:id="searchPeopleTable" layoutX="44.0" layoutY="238.0" prefHeight="212.0" prefWidth="371.0">
+                           <columns>
+                              <TableColumn fx:id="searchNumeColumn" prefWidth="67.0" text="Nume" />
+                              <TableColumn fx:id="searchPrenumeColumn" prefWidth="73.0" text="Prenume" />
+                              <TableColumn fx:id="searchEmailColumn" prefWidth="230.0" text="Email" />
+                           </columns>
+                        </TableView>
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="510.0" layoutY="7.0" prefHeight="58.0" prefWidth="175.0" style="-fx-background-color: #090a0c,linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),         linear-gradient(#20262b, #191d22),         radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0)); -fx-background-radius: 5,4,3,5; -fx-background-insets: 0,1,2,0; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );" text="Contacts" textFill="WHITE">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="searchLabel" contentDisplay="RIGHT" layoutX="51.0" layoutY="75.0" opacity="0.26" prefHeight="76.0" prefWidth="371.0" text="Search">
+                           <font>
+                              <Font size="64.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="search" fitHeight="50.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
+                           </graphic>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Button fx:id="BtnFriends" layoutY="1.0" mnemonicParsing="false" onAction="#openFriendsPane" prefHeight="50.0" prefWidth="343.0" style="-fx-background-color: #ffc13b;" text="Friends">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="BtnRequsts" layoutX="343.0" layoutY="1.0" mnemonicParsing="false" onAction="#openRequestsPane" prefHeight="50.0" prefWidth="343.0" style="-fx-background-color: #ffc13b;" text="Requests">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <Separator layoutX="340.0" layoutY="2.0" orientation="VERTICAL" prefHeight="50.0" />
+                  <Separator layoutY="51.0" prefWidth="686.0" />
+               </children>
+            </Pane>
+            <Pane fx:id="eventPane" layoutX="6.0" layoutY="34.0" prefHeight="600.0" prefWidth="686.0" style="-fx-background-color: #e8e2db;" visible="false">
+               <children>
+                  <VBox layoutX="29.0" layoutY="14.0" prefHeight="345.0" prefWidth="284.0">
+                     <children>
+                        <Label text="Name">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="eventNameBar">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <Label text="Location">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="eventPlaceBar">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <Label text="Date">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <DatePicker fx:id="eventDateBar" prefHeight="46.0" prefWidth="284.0" />
+                        <TextField visible="false">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <Button mnemonicParsing="false" onAction="#createEvent" prefHeight="39.0" prefWidth="125.0" style="-fx-background-color: #090a0c,linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),         linear-gradient(#20262b, #191d22),         radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0)); -fx-background-radius: 5,4,3,5; -fx-background-insets: 0,1,2,0; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );" text="Create" textFill="WHITE">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Button>
+                        <TextField visible="false">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </VBox>
+                  <Separator layoutX="327.0" orientation="VERTICAL" prefHeight="602.0" prefWidth="25.0" />
+                  <TableView fx:id="userEventsTable" layoutX="363.0" layoutY="107.0" prefHeight="186.0" prefWidth="300.0">
+                    <columns>
+                      <TableColumn fx:id="userEventNameColumn" prefWidth="99.0" text="Nume" />
+                      <TableColumn fx:id="userEventPlaceColumn" prefWidth="126.0" text="Locatie" />
+                        <TableColumn fx:id="userEventDateColumn" prefWidth="75.0" text="Data" />
+                        <TableColumn fx:id="userEventIdColumn" minWidth="0.0" prefWidth="0.0" text="Id" visible="false" />
+                    </columns>
+                  </TableView>
+                  <TextField fx:id="searchEventsBar" layoutX="364.0" layoutY="365.0" prefHeight="25.0" prefWidth="253.0" promptText="Search events..." />
+                  <Button layoutX="613.0" layoutY="76.0" mnemonicParsing="false" onAction="#leaveEvent" prefHeight="25.0" prefWidth="50.0" style="-fx-background-color: #090a0c,linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),         linear-gradient(#20262b, #191d22),         radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0)); -fx-background-radius: 5,4,3,5; -fx-background-insets: 0,1,2,0; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );" text="Leave" textFill="WHITE" />
+                  <Button layoutX="617.0" layoutY="365.0" mnemonicParsing="false" onAction="#joinEvent" prefHeight="25.0" prefWidth="46.0" style="-fx-background-color: #090a0c,linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),         linear-gradient(#20262b, #191d22),         radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0)); -fx-background-radius: 5,4,3,5; -fx-background-insets: 0,1,2,0; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );" text="Join" textFill="WHITE" />
+                  <TableView fx:id="eventsTable" layoutX="364.0" layoutY="396.0" prefHeight="186.0" prefWidth="300.0">
+                     <columns>
+                        <TableColumn fx:id="eventNameColumn" prefWidth="99.0" text="Nume" />
+                        <TableColumn fx:id="eventPlaceColumn" prefWidth="126.0" text="Locatie" />
+                        <TableColumn fx:id="eventDateColumn" prefWidth="75.0" text="Data" />
+                        <TableColumn fx:id="eventIdColumn" minWidth="0.0" prefWidth="0.0" text="Id" visible="false" />
+                     </columns>
+                  </TableView>
+                  <Label fx:id="eventWarningLabel" layoutX="36.0" layoutY="342.0" text="Campurile nu pot fi goale" textFill="RED" visible="false">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="notifLabelOn" layoutX="455.0" layoutY="76.0" visible="false">
+                     <graphic>
+                        <ImageView fx:id="notifOn" fitHeight="17.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic></Label>
+                  <Button fx:id="notifButton" layoutX="364.0" layoutY="76.0" mnemonicParsing="false" onAction="#changeNotif" prefHeight="25.0" prefWidth="81.0" style="-fx-background-color: #090a0c,linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),         linear-gradient(#20262b, #191d22),         radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0)); -fx-background-radius: 5,4,3,5; -fx-background-insets: 0,1,2,0; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );" text="Notification" textFill="WHITE" />
+                  <Label fx:id="notifLabelOff" layoutX="455.0" layoutY="76.0" prefHeight="17.0" prefWidth="18.0" visible="false">
+                     <graphic>
+                        <ImageView fx:id="notfiOff" fitHeight="17.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </Label>
+                  <Label fx:id="numeEveniment" layoutX="18.0" layoutY="382.0" prefHeight="44.0" prefWidth="284.0" visible="false">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="numeEvenimentImg" fitHeight="44.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </Label>
+                  <Label fx:id="numeLocatieEveniment" layoutX="18.0" layoutY="422.0" prefHeight="44.0" prefWidth="284.0" visible="false">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="numeLocatieEvenimentImg" fitHeight="44.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </Label>
+                  <Label fx:id="dataEveniment" layoutX="18.0" layoutY="466.0" prefHeight="44.0" prefWidth="284.0" visible="false">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="dataEvenimentImg" fitHeight="44.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </Label>
+                  <Label fx:id="nrParticipantiEveniment" layoutX="18.0" layoutY="510.0" prefHeight="44.0" prefWidth="284.0" visible="false">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="nrParticipantiEvenimentImg" fitHeight="44.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </Label>
+                  <Separator fx:id="sepEv_1" layoutX="18.0" layoutY="421.0" prefWidth="200.0" visible="false" />
+                  <Separator fx:id="sepEv_2" layoutX="18.0" layoutY="465.0" prefWidth="200.0" visible="false" />
+                  <Separator fx:id="sepEv_3" layoutX="18.0" layoutY="509.0" prefWidth="200.0" visible="false" />
+                  <Pagination fx:id="pageBar" layoutX="364.0" layoutY="394.0" maxPageIndicatorCount="4" prefHeight="192.0" prefWidth="300.0" />
+                  <Pagination fx:id="userEventPagination" layoutX="363.0" layoutY="108.0" maxPageIndicatorCount="4" prefHeight="232.0" prefWidth="300.0" />
+                  <Label fx:id="yourEvents" contentDisplay="RIGHT" layoutX="420.0" layoutY="14.0" opacity="0.26" prefHeight="51.0" prefWidth="217.0" text="Your events">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="yourEventsImg" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </Label>
+               </children></Pane>
+            <Pane fx:id="msgPane" layoutX="6.0" layoutY="34.0" prefHeight="600.0" prefWidth="686.0" style="-fx-background-color: #e8e2db;">
+               <children>
+                  <TableView fx:id="msgFriendsTable" layoutY="24.0" prefHeight="219.0" prefWidth="188.0">
+                    <columns>
+                        <TableColumn fx:id="selectedFriendColumn" minWidth="7.0" prefWidth="22.0" />
+                      <TableColumn fx:id="msgNumeColumn" prefWidth="69.0" text="Nume" />
+                      <TableColumn fx:id="msgPrenumeColumn" prefWidth="99.0" text="Prenume" />
+                        <TableColumn fx:id="msgEmailColumn" prefWidth="120.0" text="Email" visible="false" />
+                        <TableColumn fx:id="msgLastMsgColumn" prefWidth="75.0" text="LastMsg" visible="false" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="addToGroupBtn" contentDisplay="RIGHT" layoutY="243.0" mnemonicParsing="false" onAction="#addToGroup" prefHeight="25.0" prefWidth="188.0" style="-fx-background-color: #090a0c,linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),         linear-gradient(#20262b, #191d22),         radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0)); -fx-background-radius: 5,4,3,5; -fx-background-insets: 0,1,2,0; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );" text="Add to group" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic></Button>
+                  <TableView fx:id="msgGroupTable" layoutY="268.0" prefHeight="306.0" prefWidth="188.0">
+                    <columns>
+                        <TableColumn fx:id="selectedGroupColumn" minWidth="7.0" prefWidth="22.0" />
+                      <TableColumn fx:id="msgGroupColumn" prefWidth="164.0" text="Grup" />
+                      <TableColumn fx:id="msgGroupIdColumn" minWidth="0.0" prefWidth="0.0" text="GroupId" visible="false" />
+                    </columns>
+                  </TableView>
+                  <TextField fx:id="groupNameBar" layoutY="574.0" prefHeight="25.0" prefWidth="137.0" promptText="Enter group name..." />
+                  <Button layoutX="137.0" layoutY="574.0" mnemonicParsing="false" onAction="#createGroup" prefHeight="25.0" prefWidth="51.0" style="-fx-background-color: #090a0c,linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),         linear-gradient(#20262b, #191d22),         radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0)); -fx-background-radius: 5,4,3,5; -fx-background-insets: 0,1,2,0; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );" text="Create" textFill="WHITE" />
+                  <ListView fx:id="chatWindow" layoutX="188.0" layoutY="7.0" prefHeight="574.0" prefWidth="499.0" />
+                  <TextField fx:id="chatBar" layoutX="187.0" layoutY="574.0" prefHeight="25.0" prefWidth="456.0" />
+                  <Button layoutX="643.0" layoutY="574.0" mnemonicParsing="false" onAction="#sendMessage" style="-fx-background-color: #090a0c,linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),         linear-gradient(#20262b, #191d22),         radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0)); -fx-background-radius: 5,4,3,5; -fx-background-insets: 0,1,2,0; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );" text="Send" textFill="WHITE" />
+                  <TextField fx:id="searchMsgFriendsBar" layoutY="2.0" prefHeight="25.0" prefWidth="188.0" promptText="Search for friends..." />
+               </children></Pane>
+         </children>
+      </AnchorPane>
+      <Pane fx:id="headerPane" layoutY="-7.0" prefHeight="44.0" prefWidth="906.0" style="-fx-background-color: #090a0c,linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),         linear-gradient(#20262b, #191d22),         radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0)); -fx-background-radius: 5,4,3,5; -fx-background-insets: 0,1,2,0; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );">
+         <children>
+            <Button fx:id="minimize" layoutX="837.0" layoutY="16.0" mnemonicParsing="false" style="-fx-background-radius: 5em; -fx-min-width: 20px; -fx-max-width: 20px; -fx-max-height: 20px; -fx-min-height: 20px; -fx-background-color: #ebeb17;" text="min" />
+            <Button fx:id="exit" layoutX="872.0" layoutY="16.0" mnemonicParsing="false" style="-fx-background-radius: 5em; -fx-min-width: 20px; -fx-max-width: 20px; -fx-max-height: 20px; -fx-min-height: 20px; -fx-background-color: #ad1111;" text="min" />
+            <ImageView fx:id="logoUp" fitHeight="30.0" fitWidth="30.0" layoutX="14.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

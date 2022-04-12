@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="559.0" style="-fx-background-color: #ffc13b;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ex1.LogInController">
+   <children>
+      <Label fx:id="eroare" alignment="CENTER" contentDisplay="CENTER" layoutX="201.0" layoutY="307.0" text="Cont inexistent" textAlignment="CENTER" textFill="RED" visible="false">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Pane fx:id="headerPane" layoutX="-5.0" layoutY="-8.0" prefHeight="44.0" prefWidth="565.0" style="-fx-background-color: #090a0c,linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),         linear-gradient(#20262b, #191d22),         radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0)); -fx-background-radius: 5,4,3,5; -fx-background-insets: 0,1,2,0; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );">
+         <children>
+            <Button fx:id="minimize" layoutX="477.0" layoutY="16.0" mnemonicParsing="false" style="-fx-background-radius: 5em; -fx-min-width: 20px; -fx-max-width: 20px; -fx-max-height: 20px; -fx-min-height: 20px; -fx-background-color: #ebeb17;" text="min" />
+            <Button fx:id="exit" layoutX="516.0" layoutY="16.0" mnemonicParsing="false" style="-fx-background-radius: 5em; -fx-min-width: 20px; -fx-max-width: 20px; -fx-max-height: 20px; -fx-min-height: 20px; -fx-background-color: #ad1111;" text="min" />
+            <ImageView fx:id="logoUp" fitHeight="30.0" fitWidth="30.0" layoutX="14.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </Pane>
+      <Button contentDisplay="RIGHT" layoutX="39.0" layoutY="302.0" mnemonicParsing="false" onAction="#logIn" style="-fx-background-color: #090a0c,linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),         linear-gradient(#20262b, #191d22),         radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0)); -fx-background-radius: 5,4,3,5; -fx-background-insets: 0,1,2,0; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );" text="Log in" textFill="WHITE">
+
+         <font>
+            <Font size="20.0" />
+         </font>
+         <graphic>
+            <ImageView fx:id="logImage" fitHeight="30.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <viewport>
+                  <Rectangle2D />
+               </viewport>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button contentDisplay="RIGHT" layoutX="404.0" layoutY="301.0" mnemonicParsing="false" onAction="#signUp" style="-fx-background-color: #090a0c,linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),         linear-gradient(#20262b, #191d22),         radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));" text="Sign up" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <graphic>
+            <ImageView fx:id="signImage" fitHeight="30.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" />
+         </graphic>
+      </Button>
+      <VBox layoutX="39.0" layoutY="101.0" prefHeight="200.0" prefWidth="483.0">
+         <children>
+            <Label text="Email">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="logInEmail">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </TextField>
+            <Label text="Password">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="logInPw">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </PasswordField>
+         </children>
+      </VBox>
+      <ImageView fx:id="logo" fitHeight="123.0" fitWidth="200.0" layoutX="178.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>
